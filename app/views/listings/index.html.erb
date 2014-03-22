@@ -1,0 +1,22 @@
+<h1>Listings</h1>
+
+<%= link_to 'New Listing', new_listing_path, class: "btn btn-lg btn-success" %>
+
+<% @listings.each do |listing| %>
+<div class="listing">
+  <h2><%= listing.name %></h2>
+  <p><%= listing.description %></p>
+  <div class="buttons">
+    <%= link_to 'Show', listing, class: "btn btn-primary" %>
+    <%= link_to 'Edit', edit_listing_path(listing), class: "btn btn-info" %>
+    <%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+  </div>
+</div>
+
+<% end %>
+
+<br>
+
+
+
+<br>
